@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+  redis:
+    hostname: redis
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379"
